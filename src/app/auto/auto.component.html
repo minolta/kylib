@@ -1,0 +1,11 @@
+<md-input-container>
+
+  <input type="text" mdInput [formControl]="c" placeholder="{{p}}" [mdAutocomplete]="auto" [(ngModel)]="bag.obj.name">
+</md-input-container>
+
+
+<md-autocomplete #auto="mdAutocomplete">
+  <md-option *ngFor="let d of datas | async" [value]="d.name" (click)="selectvalue(d)">
+    {{ d.name }}
+  </md-option>
+</md-autocomplete>

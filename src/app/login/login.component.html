@@ -1,0 +1,8 @@
+<md-input-container>
+  <input mdInput placeholder="login" i18n-placehoder [(ngModel)]="user">
+</md-input-container>
+<md-input-container>
+  <input mdInput placeholder="password" type="password" i18n-placehoder [(ngModel)]="password">
+</md-input-container>
+
+<button md-button i18n (click)="login()">Login</button>
