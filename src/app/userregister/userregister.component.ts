@@ -15,8 +15,19 @@ export class UserregisterComponent implements OnInit {
   ngOnInit() {
   }
   register() {
+    if (!this.checkpassword(this.user.password, this.user.repassword)) {
+      this.bar.open('Password not same', 'Error', { duration: 15000 });
+      return;
+    }
     this.us.register(this.user).subscribe(d => {
       this.bar.open('New user', '' + d, { duration: 5000 });
     });
+  }
+
+  checkpassword(p: string, p2: string) {
+
+    if (p === p2)
+      return true;
+    return false;
   }
 }
