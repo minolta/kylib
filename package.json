@@ -1,6 +1,6 @@
 {
   "name": "kylib",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -21,7 +21,6 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "angular2-jwt": "^0.2.3",
     "@angular/router": "^4.0.0"
- 
   },
   "devDependencies": {
     "core-js": "^2.4.1",
@@ -31,7 +30,6 @@
     "@angular/compiler-cli": "^4.0.0",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
-    
     "codelyzer": "~2.0.0",
     "jasmine-core": "~2.5.2",
     "jasmine-spec-reporter": "~3.2.0",
