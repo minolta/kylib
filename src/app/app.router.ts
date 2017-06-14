@@ -1,3 +1,4 @@
+import { UserregisterComponent } from './userregister/userregister.component';
 import { UsereditComponent } from './useredit/useredit.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AdmingradService } from './admingrad.service';
@@ -14,6 +15,7 @@ const routes: Routes = [
     { path: 'home', component: Home, },
     { path: 'useredit', component: UsereditComponent, },
     { path: 'users', component: UsersComponent },
+    { path: 'reg', component: UserregisterComponent, },
     { path: 'logout', component: LogoutComponent, },
 
 ];

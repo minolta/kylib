@@ -1,3 +1,4 @@
+import { TargetHostConfig } from './kconfig';
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
 import { UserService } from './user.service';
 import { RouterModule } from '@angular/router';
@@ -18,16 +19,23 @@ import { AppComponent, Home } from './app.component';
 import { UsereditComponent } from './useredit/useredit.component';
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
+import { UserregisterComponent } from './userregister/userregister.component';
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   return new AuthHttp(new AuthConfig(), http, options);
+}
+export function userFactory(http: AuthHttp) {
+  return new UserService(http, 'http://localhost:5001', '5001');
+}
+export function targethostFactory(http: AuthHttp) {
+  return new TargetHostConfig(http, 'http://localhost:5000', '5000');
 }
 @NgModule({
   declarations: [
     AppComponent, AutoComponent,
     LoginComponent, LogoutComponent,
     UserlistComponent, UsersComponent,
-    Home, UsereditComponent
+    Home, UsereditComponent, UserregisterComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +52,16 @@ export function authHttpServiceFactory(http: Http, options: RequestOptions) {
       provide: AuthHttp,
       useFactory: authHttpServiceFactory,
       deps: [Http, RequestOptions]
+    },
+    {
+      provide: UserService,
+      useFactory: userFactory,
+      deps: [AuthHttp]
+    },
+    {
+      provide: TargetHostConfig,
+      useFactory: targethostFactory,
+      deps: [AuthHttp]
     },
   ],
   bootstrap: [AppComponent]

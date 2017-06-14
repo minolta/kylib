@@ -15,5 +15,5 @@ export class Home { }
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'Kylib';
 }

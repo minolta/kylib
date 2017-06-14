@@ -1,0 +1,20 @@
+<md-card>
+  <md-input-container>
+    <input type="text" placeholder="name" mdInput [(ngModel)]="user.name">
+  </md-input-container>
+  <md-input-container>
+    <input type="text" placeholder="login" mdInput [(ngModel)]="user.login">
+  </md-input-container>
+  <md-input-container>
+    <input type="email" placeholder="email" email mdInput [(ngModel)]="user.email">
+  </md-input-container>
+  <md-input-container>
+    <input type="password" placeholder="password" mdInput [(ngModel)]="user.password">
+  </md-input-container>
+  <md-input-container>
+    <input type="password" placeholder="re password" mdInput [(ngModel)]="user.repassword">
+  </md-input-container>
+  <md-checkbox name="admin" [(ngModel)]="user.admin" i18n>Admin</md-checkbox>
+  <md-checkbox name="enable" [(ngModel)]="user.enable" i18n>Enable</md-checkbox>
+  <button md-button (click)="register()">Register</button>
+</md-card>
