@@ -10,10 +10,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { UsereditComponent } from './useredit/useredit.component';
 
 @NgModule({
   declarations: [
-    AppComponent, AutoComponent, LoginComponent, LogoutComponent, UserlistComponent, UsersComponent
+    AppComponent, AutoComponent, LoginComponent, LogoutComponent, UserlistComponent, UsersComponent, UsereditComponent
   ],
   imports: [
     BrowserModule,
