@@ -17,6 +17,7 @@ const routes: Routes = [
     { path: 'users', component: UsersComponent },
     { path: 'reg', component: UserregisterComponent, },
     { path: 'logout', component: LogoutComponent, },
+    
 
 ];
 export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
