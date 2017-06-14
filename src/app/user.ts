@@ -4,4 +4,5 @@ export interface User {
     lname?: string;
     login?: string;
     password?: string;
+    repassword?: string;
 }

@@ -1,3 +1,12 @@
-<p>
-  useredit works!
-</p>
+<md-card>
+  <md-input-container>
+    <input type="text" mdInput placeholder="name" [(ngModel)]="user.name">
+  </md-input-container>
+  <md-input-container>
+    <input type="text" mdInput placeholder="login" [(ngModel)]="user.login">
+  </md-input-container>
+  <md-input-container>
+    <input type="password" mdInput placeholder="password" [(ngModel)]="user.password">
+  </md-input-container>
+  <button md-input>Save</button>
+</md-card>

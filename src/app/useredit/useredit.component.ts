@@ -1,3 +1,4 @@
+import { User } from './../user';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./useredit.component.css']
 })
 export class UsereditComponent implements OnInit {
-
+  user: User = {};
   constructor() { }
 
   ngOnInit() {
