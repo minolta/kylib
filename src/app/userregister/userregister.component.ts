@@ -20,7 +20,8 @@ export class UserregisterComponent implements OnInit {
       return;
     }
     this.us.register(this.user).subscribe(d => {
-      this.bar.open('New user', '' + d, { duration: 5000 });
+      this.bar.open('New user', '' + JSON.stringify(d), { duration: 5000 });
+      this.user = {};
     });
   }
 
