@@ -6,4 +6,6 @@ export interface User {
     password?: string;
     repassword?: string;
     tel?: string;
+    enable?: boolean;
+    admin?: boolean;
 }
