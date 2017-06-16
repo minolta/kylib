@@ -8,4 +8,5 @@ export interface User {
     tel?: string;
     enable?: boolean;
     admin?: boolean;
+    email?: string;
 }
