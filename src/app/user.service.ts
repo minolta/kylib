@@ -2,7 +2,7 @@ import { Logininfo } from './logininfo';
 import { User } from './user';
 import { Serviceinterface } from './serviceinterface';
 import { Http, Headers, Response } from '@angular/http';
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
 @Injectable()
@@ -15,7 +15,7 @@ export class UserService implements Serviceinterface {
     infourl = '/rest/info';  // URL to web api
 
 
-    constructor(public http: AuthHttp, public host: string, public port: string) {
+    constructor(@Inject(AuthHttp) private http: AuthHttp, public host: string, public port: string) {
 
     }
 

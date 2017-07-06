@@ -47,7 +47,7 @@ export class BS implements Serviceinterface {
     add(value: any) {
         console.log("add value" + value);
         console.log('ADD URL:' + this.urladd);
-        return this.ht.post(this.urladd, JSON.stringify(value)).map((res: Response) => res.json()).catch(this.handleError);
+        return this.ht.post(this.urladd, value).map((res: Response) => res.json()).catch(this.handleError);
     }
     get(id: number): any {
         console.log('GET URL:' + this.urlget + '/' + id);
