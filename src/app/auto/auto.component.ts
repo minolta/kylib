@@ -113,7 +113,7 @@ export class AutoComponent implements OnInit, OnChanges {
 
 
     }, error => {
-      console.log('ERROR : Object not found ' + term);
+      console.log('ERROR : Object not found ' + term+' ERROR:'+error);
       this.objnotfound(target, term);
     });
 
@@ -126,7 +126,6 @@ export class AutoComponent implements OnInit, OnChanges {
 
 
   objnotfound(target, term) {
-
     target.obj = { name: term, id: 0 };
   }
 

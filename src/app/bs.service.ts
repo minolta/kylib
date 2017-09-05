@@ -54,10 +54,10 @@ export class BS implements Serviceinterface {
         return this.ht.get(this.urlget + '/' + id).map((res: Response) => res.json()).catch(this.handleError);
     }
     search(search: string) {
-        let s = {
-            value: search,
+        let s:Searchobj = {
+            search: search,
             page: 0,
-            limit: 50
+            limit: 100
         };
         return this.ht.post(this.urlsearch, s).map(res => res.json());
     }

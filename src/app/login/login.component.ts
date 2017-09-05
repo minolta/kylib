@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/home']);
 
     }, e => {
-      this.bar.open('Login error', ' ' + e);
+      this.bar.open('Login error', ' ' + e ,{duration:7000});
       console.log(e);
       
 
