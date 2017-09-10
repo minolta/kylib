@@ -3,20 +3,26 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class AuthService {
-   public jwtHelper: JwtHelper = new JwtHelper();
+    public jwtHelper: JwtHelper = new JwtHelper();
     constructor() { }
     loggedIn() {
         return tokenNotExpired();
     }
     info() {
-        return this.jwtHelper.decodeToken(localStorage.getItem('token'));
+
+
+        let t = localStorage.getItem('token')
+        if (t == null)
+            return null
+        return this.jwtHelper.decodeToken(t);
     }
     logout() {
         localStorage.removeItem('token');
     }
     admin() {
         let o = this.info();
-
+        if(o==null)
+          return null
         return o.admin;
     }
 }
