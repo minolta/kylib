@@ -1,0 +1,33 @@
+<md-tab-group>
+  <md-tab label="list">
+    <md-input-container>
+      <input type="text" mdInput placeholder="search" (keyup)="search.next($event.target.value)">
+    </md-input-container>
+    <table>
+
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>value</th>
+        <th>option</th>
+      </tr>
+      <tr *ngFor="let d of datas">
+        <td>{{d.id}}</td>
+        <td>{{d.name}}</td>
+        <td>{{d.value}}</td>
+        <td><button md-button (click)="edit(d)">Edit</button></td>
+      </tr>
+    </table>
+  </md-tab>
+
+  <md-tab label="new">
+    <md-input-container>
+      <input type="text" mdInput placeholder="name" [(ngModel)]="data.name">
+    </md-input-container>
+    <md-input-container>
+      <input type="text"  mdInput placeholder="value" [(ngModel)]="data.value">
+    </md-input-container>
+    <button md-button (click)="save()">Save</button>
+
+  </md-tab>
+</md-tab-group>

@@ -21,4 +21,8 @@ export class TargetHostConfig implements HostInterface {
     public getHttp() {
         return this.http;
     }
+    public getTarget()
+    {
+        return this.host+":"+this.port
+    }
 }

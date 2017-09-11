@@ -1,3 +1,4 @@
+import { DbconfigService } from './deconfig/dbconfig.service';
 import { TargetHostConfig } from './kconfig';
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
 import { UserService } from './user.service';
@@ -20,6 +21,8 @@ import { UsereditComponent } from './useredit/useredit.component';
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 import { UserregisterComponent } from './userregister/userregister.component';
+import { DeconfigComponent } from './deconfig/deconfig.component';
+import { EditdbconfigComponent } from './editdbconfig/editdbconfig.component';
 
 export function authHttpServiceFactory(http: Http, options: RequestOptions) {
   return new AuthHttp(new AuthConfig(), http, options);
@@ -28,14 +31,14 @@ export function userFactory(http: AuthHttp) {
   return new UserService(http, 'http://localhost:5001', '5001');
 }
 export function targethostFactory(http: AuthHttp) {
-  return new TargetHostConfig(http, 'http://localhost:5000', '5000');
+  return new TargetHostConfig(http, 'http://localhost', '4444');
 }
 @NgModule({
   declarations: [
     AppComponent, AutoComponent,
     LoginComponent, LogoutComponent,
     UserlistComponent, UsersComponent,
-    Home, UsereditComponent, UserregisterComponent
+    Home, UsereditComponent, UserregisterComponent, DeconfigComponent, EditdbconfigComponent
   ],
   imports: [
     BrowserModule,
@@ -45,9 +48,9 @@ export function targethostFactory(http: AuthHttp) {
     FormsModule,
     HttpModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
-  providers: [AuthService, UserService,
+  providers: [AuthService, UserService,,DbconfigService,
     {
       provide: AuthHttp,
       useFactory: authHttpServiceFactory,
@@ -64,6 +67,7 @@ export function targethostFactory(http: AuthHttp) {
       deps: [AuthHttp]
     },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [EditdbconfigComponent]
 })
 export class AppModule { }

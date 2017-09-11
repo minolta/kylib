@@ -1,3 +1,4 @@
+import { DeconfigComponent } from './deconfig/deconfig.component';
 import { UserregisterComponent } from './userregister/userregister.component';
 import { UsereditComponent } from './useredit/useredit.component';
 import { LogoutComponent } from './logout/logout.component';
@@ -17,7 +18,7 @@ const routes: Routes = [
     { path: 'users', component: UsersComponent },
     { path: 'reg', component: UserregisterComponent, },
     { path: 'logout', component: LogoutComponent, },
-    
+    { path: 'dbconfig', component: DeconfigComponent, },
 
 ];
-export const routing: ModuleWithProviders = RouterModule.forRoot(routes);
+export const routing: ModuleWithProviders = RouterModule.forRoot(routes, { useHash: true });
