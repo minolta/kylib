@@ -117,6 +117,8 @@ export class BS implements Serviceinterface {
      */
     sn(obj) {
         console.log('call:' + this.urlsn);
+        if(obj.hasOwnProperty("search"))
+        return this.addbyurl(obj,this.urlsn)
         let tos = { search: obj, page: 0, limit: 50 };
         return this.addbyurl(tos, this.urlsn);
     }

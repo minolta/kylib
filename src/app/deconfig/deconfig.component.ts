@@ -2,7 +2,7 @@ import { EditdbconfigComponent } from './../editdbconfig/editdbconfig.component'
 import { DbconfigService } from './dbconfig.service';
 import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
-import { Dbconfig } from 'app/deconfig/dbconfig';
+import { Dbconfig } from './dbconfig';
 import { MdDialog, MdDialogConfig, MdDialogRef } from '@angular/material';
 
 @Component({

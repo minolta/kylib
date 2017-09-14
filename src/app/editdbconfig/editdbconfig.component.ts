@@ -1,4 +1,4 @@
-import { Dbconfig } from 'app/deconfig/dbconfig';
+import { Dbconfig } from '../deconfig/dbconfig';
 import { MdDialogRef } from '@angular/material';
 import { Component, OnInit } from '@angular/core';
 
